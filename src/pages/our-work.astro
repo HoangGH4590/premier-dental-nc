@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const cases = [
+  { id: 1, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/1-800x1073.png.webp', alt: 'Patient 1 — cosmetic dentistry transformation', category: 'Cosmetic Dentistry' },
+  { id: 2, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/2-800x1073.png.webp', alt: 'Patient 2 — smile makeover results', category: 'Smile Makeover' },
+  { id: 3, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/3-800x1073.png.webp', alt: 'Patient 3 — restorative dentistry results', category: 'Restorative Dentistry' },
+  { id: 4, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/4-800x1073.png.webp', alt: 'Patient 4 — dental crowns and veneers', category: 'Crowns & Veneers' },
+  { id: 5, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/5-800x1073.png.webp', alt: 'Patient 5 — teeth restoration', category: 'Teeth Restoration' },
+  { id: 6, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/6-800x1073.png.webp', alt: 'Patient 6 — complete smile transformation', category: 'Smile Transformation' },
+  { id: 7, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/7-800x1073.png.webp', alt: 'Patient 7 — cosmetic dental work', category: 'Cosmetic Dentistry' },
+  { id: 8, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/8-800x1073.png.webp', alt: 'Patient 8 — complete dental makeover', category: 'Full Makeover' },
+];
+---
+
+<Layout
+  title="Our Work | Premier Dental | Before & After Smile Transformations"
+  description="See real before and after results from Premier Dental. Browse our gallery of cosmetic dentistry, dental implants, Invisalign, and smile transformations in Albemarle and Charlotte, NC."
+>
+  <Header />
+  <main class="pt-20 xl:pt-24">
+    <!-- Hero -->
+    <section class="py-16 lg:py-20 bg-bg-alt">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Our Work</p>
+        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-text">
+          Real Results. Real Smiles.
+        </h1>
+        <p class="mt-6 text-text-light leading-relaxed text-lg max-w-2xl mx-auto">
+          See the transformations our patients have experienced through cosmetic, restorative, and advanced dental care at Premier Dental. Drag the slider on each case to compare before and after.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          {cases.map((item) => (
+            <div class="ba-card rounded-2xl overflow-hidden shadow-lg border border-border bg-white hover:shadow-xl transition-shadow duration-300">
+              <!-- Before/After Slider -->
+              <div class="ba-slider relative aspect-[3/4] overflow-hidden cursor-col-resize select-none" data-src={item.src}>
+                <!-- After layer (full image — right half visible) -->
+                <img
+                  src={item.src}
+                  alt={`After: ${item.alt}`}
+                  class="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                  draggable="false"
+                />
+                <!-- Before layer (clipped to left half) -->
+                <div class="ba-before absolute inset-0 overflow-hidden" style="clip-path: inset(0 50% 0 0);">
+                  <img
+                    src={item.src}
+                    alt={`Before: ${item.alt}`}
+                    class="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                    draggable="false"
+                  />
+                </div>
+                <!-- Slider handle -->
+                <div class="ba-handle absolute top-0 bottom-0 flex items-center justify-center z-10" style="left: 50%; transform: translateX(-50%);">
+                  <div class="w-0.5 h-full bg-white shadow-lg"></div>
+                  <div class="absolute w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center border-2 border-primary">
+                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4M8 15l4 4 4-4" />
+                    </svg>
+                  </div>
+                </div>
+                <!-- Before / After labels -->
+                <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full pointer-events-none">
+                  Before
+                </div>
+                <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full pointer-events-none">
+                  After
+                </div>
+              </div>
+              <!-- Info Bar -->
+              <div class="px-5 py-4 flex items-center justify-between border-t border-border">
+                <div class="flex items-center gap-3">
+                  <span class="w-8 h-8 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">
+                    {item.id}
+                  </span>
+                  <div>
+                    <p class="text-sm font-semibold text-text">{item.category}</p>
+                    <p class="text-xs text-text-muted">Patient Case #{item.id}</p>
+                  </div>
+                </div>
+                <span class="text-xs text-text-muted italic hidden sm:block">Drag to compare</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-20 text-center bg-bg-alt rounded-2xl p-10 lg:p-14 border border-border">
+          <h2 class="font-heading text-2xl sm:text-3xl font-bold text-text">
+            Ready for Your Transformation?
+          </h2>
+          <p class="mt-4 text-text-light max-w-2xl mx-auto leading-relaxed">
+            Whether you need cosmetic work, restorative care, or a complete smile makeover — we're here to help you achieve the smile you've always wanted.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="/#contact"
+              class="inline-flex items-center px-8 py-3.5 bg-primary text-white font-semibold rounded-full hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20"
+            >
+              Request an Appointment
+            </a>
+            <div class="flex items-center gap-4 text-sm text-text-light">
+              <a href="tel:7049825516" class="hover:text-primary transition-colors">Albemarle: (704) 982-5516</a>
+              <span class="text-border">|</span>
+              <a href="tel:7046887120" class="hover:text-primary transition-colors">Charlotte: (704) 688-7120</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  document.querySelectorAll('.ba-slider').forEach(slider => {
+    const beforeLayer = slider.querySelector('.ba-before') as HTMLElement;
+    const handle = slider.querySelector('.ba-handle') as HTMLElement;
+    let isDragging = false;
+
+    function updatePosition(clientX: number) {
+      const rect = slider.getBoundingClientRect();
+      let x = clientX - rect.left;
+      x = Math.max(0, Math.min(x, rect.width));
+      const pct = (x / rect.width) * 100;
+      beforeLayer.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      handle.style.left = `${pct}%`;
+    }
+
+    slider.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      updatePosition((e as MouseEvent).clientX);
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      updatePosition(e.clientX);
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    slider.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      updatePosition((e as TouchEvent).touches[0].clientX);
+      e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      updatePosition((e as TouchEvent).touches[0].clientX);
+    });
+
+    document.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+  });
+</script>
