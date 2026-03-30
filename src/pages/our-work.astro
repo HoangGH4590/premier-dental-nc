@@ -3,99 +3,142 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const cases = [
-  { id: 1, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/1-800x1073.png.webp', alt: 'Patient 1 — cosmetic dentistry transformation', category: 'Cosmetic Dentistry' },
-  { id: 2, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/2-800x1073.png.webp', alt: 'Patient 2 — smile makeover results', category: 'Smile Makeover' },
-  { id: 3, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/3-800x1073.png.webp', alt: 'Patient 3 — restorative dentistry results', category: 'Restorative Dentistry' },
-  { id: 4, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/4-800x1073.png.webp', alt: 'Patient 4 — dental crowns and veneers', category: 'Crowns & Veneers' },
-  { id: 5, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/5-800x1073.png.webp', alt: 'Patient 5 — teeth restoration', category: 'Teeth Restoration' },
-  { id: 6, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/6-800x1073.png.webp', alt: 'Patient 6 — complete smile transformation', category: 'Smile Transformation' },
-  { id: 7, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/7-800x1073.png.webp', alt: 'Patient 7 — cosmetic dental work', category: 'Cosmetic Dentistry' },
-  { id: 8, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/8-800x1073.png.webp', alt: 'Patient 8 — complete dental makeover', category: 'Full Makeover' },
+const baseUrl = 'https://premierdentalnc.com/wp-content/uploads/2024/08';
+
+const patients = [
+  { id: 1, before: `${baseUrl}/1-800x1073.png.webp`, after: `${baseUrl}/2-800x1073.png.webp`, category: 'Cosmetic Dentistry', description: 'Complete smile restoration with cosmetic veneers and whitening treatment.' },
+  { id: 2, before: `${baseUrl}/3-800x1073.png.webp`, after: `${baseUrl}/4-800x1073.png.webp`, category: 'Smile Makeover', description: 'Full smile makeover combining crowns, bonding, and teeth alignment.' },
+  { id: 3, before: `${baseUrl}/5-800x1073.png.webp`, after: `${baseUrl}/6-800x1073.png.webp`, category: 'Restorative Dentistry', description: 'Restorative treatment addressing missing and damaged teeth for full function.' },
+  { id: 4, before: `${baseUrl}/7-800x1073.png.webp`, after: `${baseUrl}/8-800x1073.png.webp`, category: 'Crowns & Veneers', description: 'Custom porcelain crowns and veneers for a natural, confident smile.' },
+  { id: 5, before: `${baseUrl}/11-800x1073.png.webp`, after: `${baseUrl}/12-800x1073.png.webp`, category: 'Teeth Restoration', description: 'Comprehensive restoration of worn and discolored teeth.' },
+  { id: 6, before: `${baseUrl}/13-800x1073.png.webp`, after: `${baseUrl}/14-800x1073.png.webp`, category: 'Smile Transformation', description: 'Dramatic smile transformation through advanced cosmetic procedures.' },
+  { id: 7, before: `${baseUrl}/15-800x1073.png.webp`, after: `${baseUrl}/16-800x1073.png.webp`, category: 'Full Makeover', description: 'Complete dental makeover restoring both aesthetics and oral health.' },
 ];
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Before & After Dental Transformations | Premier Dental",
+  "description": "View real patient before and after photos from Premier Dental in Albemarle and Charlotte, NC. See results from cosmetic dentistry, smile makeovers, crowns, veneers, and restorative treatments.",
+  "url": "https://premierdentalnc.com/our-work",
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": patients.length,
+    "itemListElement": patients.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": `Patient Case ${p.id} — ${p.category}`,
+      "description": p.description
+    }))
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Premier Dental",
+    "url": "https://premierdentalnc.com"
+  }
+};
 ---
 
 <Layout
-  title="Our Work | Premier Dental | Before & After Smile Transformations"
-  description="See real before and after results from Premier Dental. Browse our gallery of cosmetic dentistry, dental implants, Invisalign, and smile transformations in Albemarle and Charlotte, NC."
+  title="Before & After Gallery | Premier Dental | Smile Transformations in Albemarle & Charlotte, NC"
+  description="See real patient before and after photos from Premier Dental. Browse 7 smile transformations including cosmetic dentistry, veneers, crowns, restorative work, and full makeovers in Albemarle and Charlotte, NC."
+  keywords="before and after dentist, smile makeover NC, cosmetic dentistry results, dental veneers before after, teeth restoration Albemarle, dental crowns Charlotte NC, Premier Dental transformations"
+  schema={schemaData}
 >
   <Header />
   <main class="pt-20 xl:pt-24">
     <!-- Hero -->
-    <section class="py-16 lg:py-20 bg-bg-alt">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section class="py-14 lg:py-20 bg-bg-alt" aria-labelledby="our-work-heading">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p class="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Our Work</p>
-        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-text">
+        <h1 id="our-work-heading" class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-text">
           Real Results. Real Smiles.
         </h1>
-        <p class="mt-6 text-text-light leading-relaxed text-lg max-w-2xl mx-auto">
-          See the transformations our patients have experienced through cosmetic, restorative, and advanced dental care at Premier Dental. Drag the slider on each case to compare before and after.
+        <p class="mt-6 text-text-light leading-relaxed text-lg">
+          Browse real before-and-after transformations from our patients. Drag the slider on each case to see the difference our cosmetic, restorative, and advanced dental care makes.
         </p>
+        <div class="mt-6 inline-flex items-center gap-4 text-sm text-text-muted">
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+            {patients.length} Patient Cases
+          </span>
+          <span class="w-px h-4 bg-border"></span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+            Drag to compare
+          </span>
+        </div>
       </div>
     </section>
 
     <!-- Gallery -->
-    <section class="py-16 lg:py-24 bg-white">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {cases.map((item) => (
-            <div class="ba-card rounded-2xl overflow-hidden shadow-lg border border-border bg-white hover:shadow-xl transition-shadow duration-300">
+    <section class="py-14 lg:py-20 bg-white" aria-label="Before and after patient gallery">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {patients.map((patient) => (
+            <article class="ba-card group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-border bg-white">
               <!-- Before/After Slider -->
-              <div class="ba-slider relative aspect-[3/4] overflow-hidden cursor-col-resize select-none" data-src={item.src}>
-                <!-- After layer (full image — right half visible) -->
+              <div
+                class="ba-slider relative aspect-[3/4] overflow-hidden cursor-col-resize select-none"
+                role="img"
+                aria-label={`Before and after: ${patient.category} — ${patient.description}`}
+              >
+                <!-- After image (full, underneath) -->
                 <img
-                  src={item.src}
-                  alt={`After: ${item.alt}`}
+                  src={patient.after}
+                  alt={`After treatment: ${patient.category} patient at Premier Dental`}
+                  width="800"
+                  height="1073"
                   class="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
+                  decoding="async"
                   draggable="false"
                 />
-                <!-- Before layer (clipped to left half) -->
+                <!-- Before image (clipped overlay) -->
                 <div class="ba-before absolute inset-0 overflow-hidden" style="clip-path: inset(0 50% 0 0);">
                   <img
-                    src={item.src}
-                    alt={`Before: ${item.alt}`}
+                    src={patient.before}
+                    alt={`Before treatment: ${patient.category} patient at Premier Dental`}
+                    width="800"
+                    height="1073"
                     class="absolute inset-0 w-full h-full object-cover"
                     loading="lazy"
+                    decoding="async"
                     draggable="false"
                   />
                 </div>
                 <!-- Slider handle -->
-                <div class="ba-handle absolute top-0 bottom-0 flex items-center justify-center z-10" style="left: 50%; transform: translateX(-50%);">
-                  <div class="w-0.5 h-full bg-white shadow-lg"></div>
-                  <div class="absolute w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center border-2 border-primary">
-                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4M8 15l4 4 4-4" />
+                <div class="ba-handle absolute top-0 bottom-0 z-10 pointer-events-none" style="left: 50%; transform: translateX(-50%);">
+                  <div class="w-0.5 h-full bg-white/90 shadow-md"></div>
+                  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white shadow-lg flex items-center justify-center border-2 border-primary">
+                    <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    <svg class="w-4 h-4 text-primary -ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
                 </div>
-                <!-- Before / After labels -->
-                <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full pointer-events-none">
-                  Before
-                </div>
-                <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full pointer-events-none">
-                  After
-                </div>
+                <!-- Labels -->
+                <span class="absolute top-3 left-3 bg-black/60 backdrop-blur-sm text-white text-[11px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full pointer-events-none">Before</span>
+                <span class="absolute top-3 right-3 bg-primary/80 backdrop-blur-sm text-white text-[11px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full pointer-events-none">After</span>
               </div>
-              <!-- Info Bar -->
-              <div class="px-5 py-4 flex items-center justify-between border-t border-border">
-                <div class="flex items-center gap-3">
-                  <span class="w-8 h-8 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">
-                    {item.id}
-                  </span>
-                  <div>
-                    <p class="text-sm font-semibold text-text">{item.category}</p>
-                    <p class="text-xs text-text-muted">Patient Case #{item.id}</p>
+              <!-- Info -->
+              <div class="px-4 py-3 border-t border-border">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-7 h-7 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center shrink-0">{patient.id}</span>
+                  <div class="min-w-0">
+                    <h2 class="text-sm font-semibold text-text truncate">{patient.category}</h2>
+                    <p class="text-xs text-text-muted truncate">{patient.description}</p>
                   </div>
                 </div>
-                <span class="text-xs text-text-muted italic hidden sm:block">Drag to compare</span>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
         <!-- CTA -->
-        <div class="mt-20 text-center bg-bg-alt rounded-2xl p-10 lg:p-14 border border-border">
+        <div class="mt-16 text-center bg-bg-alt rounded-2xl p-10 lg:p-14 border border-border">
           <h2 class="font-heading text-2xl sm:text-3xl font-bold text-text">
             Ready for Your Transformation?
           </h2>
@@ -130,8 +173,7 @@ const cases = [
 
     function updatePosition(clientX: number) {
       const rect = slider.getBoundingClientRect();
-      let x = clientX - rect.left;
-      x = Math.max(0, Math.min(x, rect.width));
+      let x = Math.max(0, Math.min(clientX - rect.left, rect.width));
       const pct = (x / rect.width) * 100;
       beforeLayer.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
       handle.style.left = `${pct}%`;
@@ -148,9 +190,7 @@ const cases = [
       updatePosition(e.clientX);
     });
 
-    document.addEventListener('mouseup', () => {
-      isDragging = false;
-    });
+    document.addEventListener('mouseup', () => { isDragging = false; });
 
     slider.addEventListener('touchstart', (e) => {
       isDragging = true;
@@ -163,8 +203,6 @@ const cases = [
       updatePosition((e as TouchEvent).touches[0].clientX);
     });
 
-    document.addEventListener('touchend', () => {
-      isDragging = false;
-    });
+    document.addEventListener('touchend', () => { isDragging = false; });
   });
 </script>
