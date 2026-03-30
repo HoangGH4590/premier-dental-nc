@@ -1,0 +1,157 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const procedures = [
+  { title: 'Dental Fillings', desc: 'A common method for restoring teeth affected by decay, fractures, or chipping. The filling material, often composite resin or amalgam, fills the cavity or gap, providing structural support and improving function.' },
+  { title: 'Dental Crowns', desc: 'A crown, or "cap," encases a damaged tooth, restoring its shape, size, and strength. Crowns are highly durable and suitable for both aesthetic and functional purposes.' },
+  { title: 'Dental Bridges', desc: 'Bridges replace one or more missing teeth by anchoring an artificial tooth to adjacent teeth. They restore chewing ability, prevent teeth from shifting, and enhance appearance.' },
+  { title: 'Dental Implants', desc: 'A titanium post is surgically placed in the jawbone, acting as an artificial root. A crown, bridge, or denture is then attached, providing a secure, permanent restoration.' },
+  { title: 'Dentures', desc: 'Removable appliances used to replace multiple missing teeth. They restore appearance and functionality, making it easier to eat, speak, and smile with confidence.' },
+  { title: 'Inlays & Onlays', desc: "Often referred to as partial crowns, these are ideal when a filling is insufficient but a full crown is unnecessary. Inlays fit within the tooth's grooves while onlays extend over one or more cusps." },
+  { title: 'Root Canal Therapy', desc: 'Essential for saving a tooth that has been severely decayed or infected. By removing the damaged pulp and sealing the tooth, root canal therapy prevents extraction.' },
+  { title: 'Full Mouth Reconstruction', desc: 'A comprehensive approach to restore all teeth using a combination of crowns, bridges, fillings, and implants to rebuild oral health, functionality, and aesthetics.' },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Restorative Dentistry | Premier Dental",
+  "description": "Restorative dentistry services at Premier Dental including fillings, crowns, bridges, implants, dentures, root canal therapy, and full mouth reconstruction in Albemarle and Charlotte, NC.",
+  "mainEntity": {
+    "@type": "MedicalProcedure",
+    "name": "Restorative Dentistry",
+    "procedureType": "http://schema.org/NoninvasiveProcedure"
+  }
+};
+---
+
+<ServiceLayout
+  title="Restorative Dentistry | Premier Dental | Albemarle & Charlotte, NC"
+  description="Restorative dentistry services at Premier Dental including fillings, crowns, bridges, implants, dentures, root canal therapy, and full mouth reconstruction in Albemarle and Charlotte, NC."
+  keywords="restorative dentistry Albemarle NC, dental crowns Charlotte NC, dental fillings, dental bridges, root canal therapy, full mouth reconstruction"
+>
+  <!-- Hero -->
+  <section class="relative bg-bg-alt py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <a href="/#services" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline mb-6">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            Back to Services
+          </a>
+          <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-text">Restorative Dentistry</h1>
+          <p class="mt-6 text-lg text-text-light leading-relaxed">
+            Restorative dentistry is the term used to explain the replacement of lost or damaged teeth with popular methods: fillings, porcelain crowns, bridges, and implants.
+          </p>
+          <ul class="mt-4 space-y-2 text-text-light text-sm">
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">&#10003;</span> Improving the appearance of the teeth with fillings, crowns, and veneers</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">&#10003;</span> Restoring function — chew, speak, and smile with confidence</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">&#10003;</span> Strengthening teeth and making them more resistant to further damage</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">&#10003;</span> Preserving natural tooth structure by filling cavities and repairing cracks</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">&#10003;</span> Enhancing oral health and reducing the risk of future dental problems</li>
+          </ul>
+          <div class="mt-8 space-y-5">
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="tel:7049825516" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-primary font-semibold rounded-full border-2 border-primary/20 hover:border-primary hover:bg-primary/5 transition-colors shadow-md">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Albemarle (704) 982-5516
+              </a>
+              <a href="tel:7046887120" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-primary font-semibold rounded-full border-2 border-primary/20 hover:border-primary hover:bg-primary/5 transition-colors shadow-md">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Charlotte (704) 688-7120
+              </a>
+            </div>
+            <a href="/#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-white font-semibold rounded-full hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20">
+              Request an Appointment
+            </a>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-2xl">
+          <img src="https://premierdentalnc.com/wp-content/uploads/2024/08/1.jpg" alt="Restorative dentistry at Premier Dental in Charlotte NC" width="600" height="400" class="w-full h-auto object-cover" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is it -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-6">What is Restorative Dentistry?</h2>
+      <p class="text-text-light leading-relaxed">
+        Restorative dentistry involves the repair and replacement of damaged or missing teeth through a variety of procedures, such as fillings, crowns, bridges, and implants. At Premier Dental, we stay at the forefront of restorative techniques and materials, committed to providing effective and long-lasting solutions to restore dental health impacted by decay, trauma, or wear.
+      </p>
+
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-text mt-16 mb-6">Why is Restorative Dentistry Important?</h2>
+      <p class="text-text-light leading-relaxed">
+        Restorative dentistry plays a vital role in maintaining oral health and overall well-being. Restoring damaged teeth helps maintain correct positioning and alignment, which supports effective oral hygiene practices by making it easier to clean all areas of the mouth. This not only prevents plaque buildup but also reduces the risk of other dental issues.
+      </p>
+      <p class="text-text-light leading-relaxed mt-4">
+        Furthermore, restorative procedures improve the aesthetics of your smile, boosting confidence and encouraging a positive self-image. In short, restorative dentistry ensures that your teeth remain healthy, functional, and beautiful.
+      </p>
+    </div>
+  </section>
+
+  <!-- Procedures -->
+  <section class="py-20 bg-bg-alt">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-text text-center mb-12">Key Restorative Procedures</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {procedures.map((proc) => (
+          <div class="bg-white rounded-2xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all">
+            <h3 class="font-heading text-lg font-semibold text-text mb-3">{proc.title}</h3>
+            <p class="text-sm text-text-light leading-relaxed">{proc.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality & Post-Treatment -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="flex flex-col">
+          <div class="rounded-2xl overflow-hidden shadow-lg mb-6">
+            <img src="https://premierdentalnc.com/wp-content/uploads/2024/12/22.jpg" alt="Restorative dentistry materials at Premier Dental" width="500" height="350" class="w-full h-64 object-cover" loading="lazy" />
+          </div>
+          <h3 class="font-heading text-2xl font-semibold text-text mb-3">Quality Materials</h3>
+          <p class="text-text-light leading-relaxed">
+            We use high-quality materials such as composite resins, porcelain, and titanium to ensure durable, natural-looking results. Each material is selected based on your specific needs for longevity and optimal aesthetics.
+          </p>
+        </div>
+        <div class="flex flex-col">
+          <div class="rounded-2xl overflow-hidden shadow-lg mb-6">
+            <img src="https://premierdentalnc.com/wp-content/uploads/2024/12/23.jpg" alt="Post-treatment dental care at Premier Dental NC" width="500" height="350" class="w-full h-64 object-cover" loading="lazy" />
+          </div>
+          <h3 class="font-heading text-2xl font-semibold text-text mb-3">Post-Treatment Care</h3>
+          <p class="text-text-light leading-relaxed">
+            Maintaining gum health is critical to the success of restorative procedures. We recommend regular cleanings, proper brushing techniques, and follow-up visits to ensure your restorations last a lifetime.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-primary text-white text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-4">Ready to Restore Your Smile?</h2>
+      <p class="text-white/80 text-lg mb-8">
+        Whether it's a filling, crown, implant, or full mouth reconstruction -- our experienced team is here to help you achieve a healthy, beautiful smile that lasts.
+      </p>
+      <div class="flex flex-col items-center gap-4">
+        <a href="/#contact" class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-full hover:bg-white/90 transition-colors">
+          Request an Appointment
+        </a>
+        <div class="flex flex-row gap-4">
+          <a href="tel:7049825516" class="inline-flex items-center justify-center px-6 py-4 text-white font-semibold border-2 border-white/30 rounded-full hover:bg-white/10 transition-colors">
+            Albemarle: (704) 982-5516
+          </a>
+          <a href="tel:7046887120" class="inline-flex items-center justify-center px-6 py-4 text-white font-semibold border-2 border-white/30 rounded-full hover:bg-white/10 transition-colors">
+            Charlotte: (704) 688-7120
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

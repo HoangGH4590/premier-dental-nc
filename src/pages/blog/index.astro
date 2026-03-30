@@ -1,0 +1,168 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { blogPosts } from '../../data/blogPosts';
+
+const title = 'Blog - Premier Dental | Dental Health Tips & Insights';
+const description = 'Read the latest articles from Premier Dental covering restorative dentistry, cosmetic dentistry, dental implants, Invisalign, and more in Charlotte, NC.';
+
+const categories = [...new Set(blogPosts.map(p => p.category))];
+---
+
+<Layout title={title} description={description} keywords="dental blog, dental health tips, cosmetic dentistry blog, dental implants articles, Invisalign tips, Premier Dental Charlotte">
+  <Header />
+  <main class="pt-16 lg:pt-20">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-primary-dark py-16 sm:py-20">
+      <div class="max-w-[1400px] mx-auto px-4 sm:px-6 xl:px-8 text-center">
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          Our Blog
+        </h1>
+        <p class="text-white/80 text-lg sm:text-xl max-w-2xl mx-auto">
+          Expert insights, tips, and guides on dental health from the Premier Dental team in Charlotte, NC.
+        </p>
+      </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="bg-white border-b border-border sticky top-16 lg:top-20 z-40">
+      <div class="max-w-[1400px] mx-auto px-4 sm:px-6 xl:px-8">
+        <div class="flex items-center gap-2 py-4 overflow-x-auto scrollbar-hide">
+          <button
+            data-category="all"
+            class="category-btn shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-colors bg-primary text-white"
+          >
+            All Posts
+          </button>
+          {categories.map(cat => (
+            <button
+              data-category={cat}
+              class="category-btn shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-colors bg-bg-alt text-text-light hover:bg-primary/10 hover:text-primary"
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="py-12 sm:py-16 bg-bg">
+      <div class="max-w-[1400px] mx-auto px-4 sm:px-6 xl:px-8">
+        <div id="blog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {blogPosts.map((post) => (
+            <article
+              data-category={post.category}
+              class="blog-card group bg-white rounded-2xl shadow-sm border border-border overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            >
+              <a href={`/blog/${post.slug}`} class="block">
+                <div class="relative overflow-hidden aspect-[16/10]">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div class="absolute top-3 left-3">
+                    <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-primary/90 text-white backdrop-blur-sm">
+                      {post.category}
+                    </span>
+                  </div>
+                </div>
+                <div class="p-5 sm:p-6">
+                  <time class="text-xs font-medium text-text-muted uppercase tracking-wide">
+                    {post.date}
+                  </time>
+                  <h2 class="font-heading text-lg sm:text-xl font-semibold text-text mt-2 mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                    {post.title}
+                  </h2>
+                  <p class="text-sm text-text-light leading-relaxed line-clamp-3 mb-4">
+                    {post.excerpt}
+                  </p>
+                  <span class="inline-flex items-center text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                    Read More
+                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <!-- Empty state -->
+        <div id="empty-state" class="hidden text-center py-16">
+          <p class="text-text-muted text-lg">No posts found in this category.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-br from-primary to-primary-dark">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="font-heading text-2xl sm:text-3xl font-bold text-white mb-4">
+          Ready to Transform Your Smile?
+        </h2>
+        <p class="text-white/80 text-lg mb-8">
+          Schedule a consultation with our expert team and discover the best dental solutions for you.
+        </p>
+        <a
+          href="/#contact"
+          class="inline-flex items-center px-8 py-3.5 bg-white text-primary font-semibold rounded-full hover:bg-bg-alt transition-colors shadow-lg"
+        >
+          Book Your Appointment
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll('.category-btn');
+  const cards = document.querySelectorAll('.blog-card');
+  const emptyState = document.getElementById('empty-state');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-category');
+
+      // Update active button
+      buttons.forEach(b => {
+        b.classList.remove('bg-primary', 'text-white');
+        b.classList.add('bg-bg-alt', 'text-text-light', 'hover:bg-primary/10', 'hover:text-primary');
+      });
+      btn.classList.add('bg-primary', 'text-white');
+      btn.classList.remove('bg-bg-alt', 'text-text-light', 'hover:bg-primary/10', 'hover:text-primary');
+
+      // Filter cards
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        if (category === 'all' || cardCategory === category) {
+          (card as HTMLElement).style.display = '';
+          visibleCount++;
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+
+      // Toggle empty state
+      if (emptyState) {
+        emptyState.classList.toggle('hidden', visibleCount > 0);
+      }
+    });
+  });
+</script>

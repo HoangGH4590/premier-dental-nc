@@ -1,0 +1,135 @@
+---
+const navLinks = [
+  { label: 'Services', href: '/#services' },
+  { label: 'Our Work', href: '/#our-work' },
+  { label: 'EMFACE®', href: '/#emface' },
+  { label: 'About', href: '/#about' },
+  { label: 'Insurance', href: '/#insurance' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Locations', href: '/#locations' },
+];
+---
+
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-transparent" aria-label="Main navigation">
+  <div class="max-w-[1400px] mx-auto px-4 sm:px-6 xl:px-8">
+    <div class="flex items-center justify-between h-16 xl:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 shrink-0" aria-label="Premier Dental Home">
+        <img
+          src="https://premierdentalnc.com/wp-content/uploads/2024/08/logo-dental-premier-200x200.png.webp"
+          alt="Premier Dental Logo"
+          width="44"
+          height="44"
+          class="w-9 h-9 xl:w-10 xl:h-10 rounded-full"
+          loading="eager"
+        />
+        <div class="flex flex-col">
+          <span class="font-heading text-base xl:text-lg font-semibold text-text leading-tight">Premier Dental</span>
+          <span class="text-[10px] text-text-muted leading-tight">Wellness & Advanced Care</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden xl:flex items-center gap-0.5" aria-label="Primary">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class="px-2.5 py-2 text-[13px] font-medium text-text-light hover:text-primary transition-colors rounded-lg hover:bg-bg-alt whitespace-nowrap"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden xl:flex items-center">
+        <a
+          href="/#contact"
+          class="inline-flex items-center px-5 py-2 bg-primary text-white text-[13px] font-semibold rounded-full hover:bg-primary-dark transition-colors shadow-md shadow-primary/20 whitespace-nowrap"
+        >
+          Book Appointment
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="xl:hidden p-2 rounded-lg hover:bg-bg-alt transition-colors"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <svg id="menu-icon-open" class="w-6 h-6 text-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 text-text hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="xl:hidden hidden bg-white border-t border-border">
+    <nav class="max-w-7xl mx-auto px-4 py-4 space-y-1" aria-label="Mobile navigation">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class="mobile-nav-link block px-4 py-3 text-base font-medium text-text-light hover:text-primary hover:bg-bg-alt rounded-lg transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="pt-4 border-t border-border space-y-3">
+        <a href="tel:7049825516" class="block px-4 py-2 text-sm text-text-light">
+          Albemarle: (704) 982-5516
+        </a>
+        <a href="tel:7046887120" class="block px-4 py-2 text-sm text-text-light">
+          Charlotte: (704) 688-7120
+        </a>
+        <a
+          href="/#contact"
+          class="mobile-nav-link block text-center px-4 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-dark transition-colors"
+        >
+          Book Appointment
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Scroll effect for header
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header?.classList.add('shadow-md', 'border-border');
+    } else {
+      header?.classList.remove('shadow-md', 'border-border');
+    }
+  });
+
+  // Mobile menu toggle
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+    btn?.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+      btn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

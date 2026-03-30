@@ -1,0 +1,121 @@
+<section id="contact" class="py-20 lg:py-28 bg-bg-alt" aria-labelledby="contact-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+      <!-- Info Side -->
+      <div>
+        <p class="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Get In Touch</p>
+        <h2 id="contact-heading" class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-text">
+          Ready to Smile?
+        </h2>
+        <p class="mt-4 text-lg text-text-light leading-relaxed">
+          Whether you need a routine cleaning, emergency care, or want to explore EMFACE treatments — we're here to help. Fill out the form and we'll get back to you the same day.
+        </p>
+
+        <div class="mt-10 space-y-6">
+          <!-- Albemarle -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-text">Albemarle</h3>
+              <a href="tel:7049825516" class="text-primary font-medium hover:underline">(704) 982-5516</a>
+              <p class="text-sm text-text-light mt-1">1122 North 6th St, Albemarle, NC 28001</p>
+            </div>
+          </div>
+
+          <!-- Charlotte -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-text">Charlotte</h3>
+              <a href="tel:7046887120" class="text-primary font-medium hover:underline">(704) 688-7120</a>
+              <p class="text-sm text-text-light mt-1">2100 N Davidson St, Charlotte, NC 28205</p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-text">Email</h3>
+              <a href="mailto:premierdental@outlook.com" class="text-primary font-medium hover:underline">premierdental@outlook.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Side -->
+      <div class="bg-white rounded-2xl border border-border p-8 shadow-sm">
+        <h3 class="font-heading text-2xl font-semibold text-text mb-2">Request an Appointment</h3>
+        <p class="text-sm text-text-muted mb-6">We'll reach out within the same business day.</p>
+
+        <form action="#" method="POST" class="space-y-5" id="contact-form">
+          <div>
+            <label for="name" class="block text-sm font-medium text-text mb-1.5">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-4 py-3 bg-input-bg border border-border rounded-xl text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+              placeholder="Your full name"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-text mb-1.5">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 bg-input-bg border border-border rounded-xl text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+              placeholder="your@email.com"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-text mb-1.5">How Can We Help?</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="w-full px-4 py-3 bg-input-bg border border-border rounded-xl text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-none"
+              placeholder="Tell us about your dental needs..."
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full px-6 py-3.5 bg-primary text-white font-semibold rounded-full hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20"
+          >
+            Send Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const originalText = btn.textContent;
+    btn.textContent = 'Thank you! We\'ll be in touch.';
+    btn.disabled = true;
+    btn.classList.add('opacity-70');
+    setTimeout(() => {
+      form.reset();
+      btn.textContent = originalText;
+      btn.disabled = false;
+      btn.classList.remove('opacity-70');
+    }, 3000);
+  });
+</script>

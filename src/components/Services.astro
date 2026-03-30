@@ -1,0 +1,98 @@
+---
+const services = [
+  {
+    title: 'Restorative Dentistry',
+    description: 'Replacement of lost or damaged teeth with popular methods: fillings, porcelain crowns, bridges, and implants.',
+    href: '/services/restorative-dentistry',
+    icon: '🦷',
+    image: 'https://premierdentalnc.com/wp-content/uploads/2024/12/1.jpg',
+    alt: 'Restorative dentistry including crowns and fillings at Premier Dental Albemarle NC',
+  },
+  {
+    title: 'Cosmetic Dentistry',
+    description: 'Addresses new challenges in cosmetic dentistry and gives patients more choices. Bring beauty, harmony smile to everyone.',
+    href: '/services/cosmetic-dentistry',
+    icon: '✨',
+    image: 'https://premierdentalnc.com/wp-content/uploads/2024/12/2.jpg',
+    alt: 'Cosmetic dentistry and teeth whitening services in Charlotte NC',
+  },
+  {
+    title: 'Dental Implants',
+    description: 'A small screw made of titanium surgically placed in the jawbone, supporting a prosthetic crown, bridge, or denture to replace lost teeth.',
+    href: '/services/implant-dentistry',
+    icon: '🔩',
+    image: 'https://premierdentalnc.com/wp-content/uploads/2024/12/3.jpg',
+    alt: 'Dental implant procedure at Premier Dental NC',
+  },
+  {
+    title: 'Preventive Dentistry',
+    description: 'Routine dental check-ups for preventing and detecting dental diseases, supporting means to protect your teeth and mouth.',
+    href: '/services/preventive-dentistry',
+    icon: '🛡️',
+    image: 'https://premierdentalnc.com/wp-content/uploads/2024/12/4.jpg',
+    alt: 'Preventive dental cleaning and checkup in Albemarle NC',
+  },
+  {
+    title: 'Invisalign',
+    description: 'A method of braces that uses transparent aligners to straighten teeth — no brackets or elastic bands needed.',
+    href: '/services/invisalign',
+    icon: '😁',
+    image: 'https://premierdentalnc.com/wp-content/uploads/2024/12/5.jpg',
+    alt: 'Invisalign clear aligners available at Premier Dental Albemarle and Charlotte NC',
+  },
+  {
+    title: 'Emergency Dentistry',
+    description: "Same-day emergency care when you need it most. Don't wait — call us now.",
+    href: '/services/emergency-dentistry',
+    icon: '🚨',
+    image: 'https://premierdentalnc.com/wp-content/uploads/2024/12/6.jpg',
+    alt: 'Same-day emergency dentist in Albemarle and Charlotte NC',
+  },
+];
+---
+
+<section id="services" class="py-20 lg:py-28 bg-white" aria-labelledby="services-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <p class="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Comprehensive Dental Services</p>
+      <h2 id="services-heading" class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-text">
+        Complete Dental Care in Albemarle & Charlotte
+      </h2>
+      <p class="mt-4 text-lg text-text-light">
+        From routine cleanings to complex restorations, dental implants, and Invisalign — we provide complete dental care under one roof with the latest technology and a gentle touch.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {services.map((service) => (
+        <a
+          href={service.href}
+          class="group relative bg-bg rounded-2xl overflow-hidden border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300"
+        >
+          <div class="aspect-[16/9] overflow-hidden">
+            <img
+              src={service.image}
+              alt={service.alt}
+              width="400"
+              height="225"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading text-xl font-semibold text-text group-hover:text-primary transition-colors mb-2">
+              {service.title}
+            </h3>
+            <p class="text-text-light text-sm leading-relaxed">{service.description}</p>
+            <span class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-primary">
+              Learn More
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

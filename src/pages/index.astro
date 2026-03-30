@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Emface from '../components/Emface.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import OurWork from '../components/OurWork.astro';
+import About from '../components/About.astro';
+import Insurance from '../components/Insurance.astro';
+import FAQ from '../components/FAQ.astro';
+import Locations from '../components/Locations.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Premier Dental",
+  "description": "Premier Dental provides gentle, honest dental care in Albemarle and Charlotte, NC. Services include preventive cleanings, cosmetic dentistry, dental implants, Invisalign, emergency dentistry, and EMFACE treatments.",
+  "url": "https://premierdentalnc.com",
+  "telephone": ["(704) 982-5516", "(704) 688-7120"],
+  "email": "premierdental@outlook.com",
+  "image": "https://premierdentalnc.com/wp-content/uploads/2024/08/logo-dental-premier-200x200.png.webp",
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "08:30",
+      "closes": "17:00"
+    }
+  ],
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "1122 North 6th St",
+      "addressLocality": "Albemarle",
+      "addressRegion": "NC",
+      "postalCode": "28001",
+      "addressCountry": "US"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "2100 N Davidson Street",
+      "addressLocality": "Charlotte",
+      "addressRegion": "NC",
+      "postalCode": "28205",
+      "addressCountry": "US"
+    }
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Albemarle" },
+    { "@type": "City", "name": "Charlotte" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Dental Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Restorative Dentistry" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cosmetic Dentistry" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dental Implants" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preventive Dentistry" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Invisalign" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency Dentistry" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "EMFACE Treatments" } }
+    ]
+  }
+};
+---
+
+<Layout
+  title="Premier Dental | Dentist in Albemarle & Charlotte, NC | Comprehensive Dental Care"
+  description="Premier Dental provides gentle, honest dental care in Albemarle and Charlotte, NC. Services include preventive cleanings, cosmetic dentistry, dental implants, Invisalign, emergency dentistry, and EMFACE treatments."
+  schema={schema}
+>
+  <Header />
+  <main>
+    <Hero />
+    <Services />
+    <Emface />
+    <WhyChooseUs />
+    <OurWork />
+    <About />
+    <Insurance />
+    <FAQ />
+    <Locations />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

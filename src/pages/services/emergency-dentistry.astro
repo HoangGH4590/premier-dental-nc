@@ -1,0 +1,123 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const emergencies = [
+  { title: 'Severe Toothache', desc: 'Intense, persistent tooth pain that may indicate infection, abscess, or deep decay requiring immediate treatment.' },
+  { title: 'Broken or Cracked Tooth', desc: 'Teeth damaged by trauma, biting hard objects, or accidents need prompt care to prevent further damage or infection.' },
+  { title: 'Knocked-Out Tooth', desc: 'A tooth that has been completely knocked out can sometimes be saved if treated within 30-60 minutes. Call us immediately.' },
+  { title: 'Lost Filling or Crown', desc: 'A missing filling or crown exposes the tooth to bacteria and sensitivity. We can replace it quickly to protect the tooth.' },
+  { title: 'Swelling or Abscess', desc: 'Facial swelling, pus, or a bump on the gums may indicate a dental abscess -- a serious infection that needs urgent care.' },
+  { title: "Bleeding That Won't Stop", desc: 'Persistent bleeding after an extraction or injury needs professional attention to prevent complications.' },
+];
+
+const steps = [
+  'Stay calm and assess the situation',
+  'Call Premier Dental immediately for same-day care',
+  'If a tooth is knocked out, keep it moist (in milk or saliva)',
+  'Apply a cold compress to reduce swelling',
+  'Avoid aspirin near the affected area (it can increase bleeding)',
+  "Don't try to fix broken dental work yourself",
+];
+---
+
+<ServiceLayout
+  title="Emergency Dentistry | Premier Dental | Same-Day Care in Albemarle & Charlotte, NC"
+  description="Same-day emergency dental care at Premier Dental. Severe pain, broken teeth, swelling, or trauma -- call us immediately. Albemarle and Charlotte, NC locations."
+  keywords="emergency dentist Albemarle NC, emergency dentist Charlotte NC, same-day dental care, toothache, broken tooth, dental emergency"
+>
+  <!-- Hero -->
+  <section class="relative py-20 lg:py-28 text-white bg-gradient-to-br from-[#6b1c1c] to-[#8b3a3a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <a href="/#services" class="inline-flex items-center gap-1.5 text-sm font-medium text-white/70 hover:text-white">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            Back to Services
+          </a>
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/15 text-white text-sm font-semibold rounded-full backdrop-blur-sm">
+            Same-Day Emergency Care Available
+          </div>
+        </div>
+        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold">Emergency Dentistry</h1>
+        <p class="mt-6 text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
+          Dental emergencies don't wait — and neither do we. Same-day emergency care when you need it most.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:7049825516" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#6b1c1c] font-semibold rounded-full hover:bg-white/90 transition-colors shadow-lg">
+            <svg class="w-4 h-4 text-[#c44040]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Albemarle: (704) 982-5516
+          </a>
+          <a href="tel:7046887120" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/20 transition-colors backdrop-blur-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Charlotte: (704) 688-7120
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Don't Wait -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-6">Don't Wait -- Call Us Now</h2>
+      <p class="text-text-light leading-relaxed">
+        If you're experiencing a dental emergency -- severe pain, a broken tooth, swelling, or trauma -- call us immediately and we'll get you in as quickly as possible. We provide same-day emergency dental services at both our Albemarle and Charlotte offices, Monday through Thursday.
+      </p>
+      <p class="text-text-light leading-relaxed mt-4">
+        Our experienced team is equipped to handle urgent dental situations with the care and precision you need when it matters most.
+      </p>
+    </div>
+  </section>
+
+  <!-- Common Emergencies -->
+  <section class="py-20 bg-bg-alt">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-text text-center mb-12">Common Dental Emergencies</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {emergencies.map((e) => (
+          <div class="bg-white rounded-2xl p-6 border border-border hover:border-red-300 hover:shadow-lg transition-all">
+            <h3 class="font-heading text-lg font-semibold text-text mb-3">{e.title}</h3>
+            <p class="text-sm text-text-light leading-relaxed">{e.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What to Do -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-text text-center mb-12">What to Do in a Dental Emergency</h2>
+      <div class="space-y-4">
+        {steps.map((step, i) => (
+          <div class="flex items-start gap-4 p-4 bg-bg rounded-xl">
+            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">{i + 1}</span>
+            <span class="text-text-light pt-1">{step}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-br from-[#6b1c1c] to-[#8b3a3a] text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">Need Emergency Dental Care?</h2>
+      <p class="text-white/70 text-lg mb-8">
+        Call us right now. We'll get you in today.
+      </p>
+      <div class="flex flex-col items-center gap-4">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="tel:7049825516" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#6b1c1c] font-semibold rounded-full hover:bg-white/90 transition-colors shadow-lg">
+            <svg class="w-4 h-4 text-[#c44040]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Albemarle: (704) 982-5516
+          </a>
+          <a href="tel:7046887120" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#6b1c1c] font-semibold rounded-full hover:bg-white/90 transition-colors shadow-lg">
+            <svg class="w-4 h-4 text-[#c44040]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Charlotte: (704) 688-7120
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

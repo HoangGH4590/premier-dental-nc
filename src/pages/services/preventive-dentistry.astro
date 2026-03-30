@@ -1,0 +1,139 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const services = [
+  { title: 'Dental Cleanings', desc: "Professional cleanings every 6 months remove plaque and tartar buildup that regular brushing can't reach, keeping your teeth and gums healthy." },
+  { title: 'Comprehensive Exams', desc: 'Thorough examinations to detect early signs of decay, gum disease, oral cancer, and other conditions before they become serious problems.' },
+  { title: 'Digital X-Rays', desc: 'Advanced digital imaging allows us to see beneath the surface, detecting hidden cavities, bone loss, and other issues with minimal radiation exposure.' },
+  { title: 'Fluoride Treatments', desc: 'Professional fluoride applications strengthen tooth enamel and help prevent cavities, especially beneficial for children and patients at higher risk of decay.' },
+  { title: 'Dental Sealants', desc: 'Thin protective coatings applied to the chewing surfaces of back teeth to prevent decay in the grooves and pits where bacteria tend to accumulate.' },
+  { title: 'Oral Cancer Screenings', desc: 'Regular screenings to detect early signs of oral cancer, significantly improving treatment outcomes when caught early.' },
+];
+
+const tips = [
+  'Brush twice daily with fluoride toothpaste',
+  'Floss at least once a day',
+  'Visit your dentist every 6 months for cleanings and exams',
+  'Limit sugary and acidic foods and beverages',
+  "Don't use your teeth as tools",
+  'Wear a mouthguard during sports',
+  'Replace your toothbrush every 3-4 months',
+];
+---
+
+<ServiceLayout
+  title="Preventive Dentistry | Premier Dental | Albemarle & Charlotte, NC"
+  description="Preventive dental care at Premier Dental including cleanings, exams, screenings, fluoride treatments, and sealants. Keep your smile healthy in Albemarle and Charlotte, NC."
+  keywords="preventive dentistry Albemarle NC, dental cleaning Charlotte NC, dental exam, fluoride treatment, dental sealants, oral cancer screening"
+>
+  <!-- Hero -->
+  <section class="relative bg-bg-alt py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <a href="/#services" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline mb-6">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            Back to Services
+          </a>
+          <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-text">Preventive Dentistry</h1>
+          <p class="mt-6 text-lg text-text-light leading-relaxed">
+            Preventive dentistry is a routine dental check-up for preventing and detecting dental diseases or deviations and, by dental measures, supporting means to protect your teeth and mouth.
+          </p>
+          <ul class="mt-4 space-y-2 text-text-light text-sm">
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">&#10003;</span> Reducing the risk of cavities, gum disease, and tooth loss</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">&#10003;</span> Saving time and money by preventing costly treatments</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">&#10003;</span> Improving overall health — good oral health impacts your well-being</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">&#10003;</span> Enhancing quality of life by preventing pain and discomfort</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">&#10003;</span> Maintaining a beautiful smile you can be confident about</li>
+          </ul>
+          <div class="mt-8 space-y-5">
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="tel:7049825516" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-primary font-semibold rounded-full border-2 border-primary/20 hover:border-primary hover:bg-primary/5 transition-colors shadow-md">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Albemarle (704) 982-5516
+              </a>
+              <a href="tel:7046887120" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-primary font-semibold rounded-full border-2 border-primary/20 hover:border-primary hover:bg-primary/5 transition-colors shadow-md">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Charlotte (704) 688-7120
+              </a>
+            </div>
+            <a href="/#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-white font-semibold rounded-full hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20">
+              Book a Cleaning
+            </a>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-2xl">
+          <img src="https://premierdentalnc.com/wp-content/uploads/2024/12/4.jpg" alt="Preventive dental care at Premier Dental Albemarle NC" width="600" height="400" class="w-full h-auto object-cover" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Preventive Care -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-6">Why Preventive Care Matters</h2>
+      <p class="text-text-light leading-relaxed">
+        Preventive dentistry is the foundation of a healthy smile. By catching problems early -- before they become painful or expensive -- we help you maintain your natural teeth for a lifetime. We recommend dental cleanings and checkups every 6 months for most patients. Regular preventive care saves you from more costly procedures down the road.
+      </p>
+      <p class="text-text-light leading-relaxed mt-4">
+        At Premier Dental, our team stays on the cutting edge of preventive techniques, using the latest technology and evidence-based practices to protect your oral health at both our Albemarle and Charlotte locations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-20 bg-bg-alt">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-text text-center mb-12">Our Preventive Services</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((svc) => (
+          <div class="bg-white rounded-2xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all">
+            <h3 class="font-heading text-lg font-semibold text-text mb-3">{svc.title}</h3>
+            <p class="text-sm text-text-light leading-relaxed">{svc.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-text text-center mb-12">Tips for a Healthy Smile</h2>
+      <div class="space-y-3">
+        {tips.map((tip) => (
+          <div class="flex items-start gap-3 p-4 bg-bg rounded-xl">
+            <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-text-light">{tip}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-primary text-white text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-4">Schedule Your Next Cleaning</h2>
+      <p class="text-white/80 text-lg mb-8">
+        Prevention is the best medicine. Book your checkup today and keep your smile healthy for years to come.
+      </p>
+      <div class="flex flex-col items-center gap-4">
+        <a href="/#contact" class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-full hover:bg-white/90 transition-colors">
+          Book a Cleaning
+        </a>
+        <div class="flex flex-row gap-4">
+          <a href="tel:7049825516" class="inline-flex items-center justify-center px-6 py-4 text-white font-semibold border-2 border-white/30 rounded-full hover:bg-white/10 transition-colors">
+            Albemarle: (704) 982-5516
+          </a>
+          <a href="tel:7046887120" class="inline-flex items-center justify-center px-6 py-4 text-white font-semibold border-2 border-white/30 rounded-full hover:bg-white/10 transition-colors">
+            Charlotte: (704) 688-7120
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

@@ -1,0 +1,40 @@
+---
+const insurancePlans = [
+  'Cigna',
+  'Aetna',
+  'MetLife',
+  'Delta Dental',
+  'Guardian',
+  'United Healthcare',
+  'Blue Cross Blue Shield',
+];
+---
+
+<section id="insurance" class="py-20 lg:py-28 bg-white" aria-labelledby="insurance-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <p class="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Insurance</p>
+      <h2 id="insurance-heading" class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-text">
+        We Accept Most Major Plans
+      </h2>
+      <p class="mt-4 text-lg text-text-light">
+        We work with a wide range of insurance providers to make quality dental care accessible. Out-of-pocket costs vary by procedure.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+      {insurancePlans.map((plan) => (
+        <div class="inline-flex items-center px-6 py-3 bg-bg rounded-xl border border-border text-text font-medium text-sm hover:border-primary/30 hover:bg-bg-alt transition-colors">
+          <svg class="w-5 h-5 text-primary mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          {plan}
+        </div>
+      ))}
+    </div>
+
+    <p class="text-center mt-8 text-text-light">
+      Don't see your plan? <a href="#contact" class="text-primary font-semibold hover:underline">Contact us</a> — we'll help you understand your coverage.
+    </p>
+  </div>
+</section>
