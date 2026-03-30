@@ -1,20 +1,20 @@
 ---
 const cases = [
-  { id: 1, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/1-800x1073.png.webp', alt: 'Before and after dental transformation case 1 — cosmetic dentistry results' },
-  { id: 2, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/2-800x1073.png.webp', alt: 'Before and after dental transformation case 2 — smile makeover' },
-  { id: 3, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/3-800x1073.png.webp', alt: 'Before and after dental transformation case 3 — restorative dentistry' },
-  { id: 4, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/4-800x1073.png.webp', alt: 'Before and after dental transformation case 4 — dental crowns and veneers' },
-  { id: 5, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/5-800x1073.png.webp', alt: 'Before and after dental transformation case 5 — teeth restoration' },
-  { id: 6, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/6-800x1073.png.webp', alt: 'Before and after dental transformation case 6 — complete smile transformation' },
-  { id: 7, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/7-800x1073.png.webp', alt: 'Before and after dental transformation case 7 — cosmetic dental work' },
-  { id: 8, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/8-800x1073.png.webp', alt: 'Before and after dental transformation case 8 — complete dental makeover' },
+  { id: 1, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/1-800x1073.png.webp', alt: 'Before and after dental transformation — cosmetic dentistry results', category: 'Cosmetic Dentistry' },
+  { id: 2, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/2-800x1073.png.webp', alt: 'Before and after dental transformation — smile makeover', category: 'Smile Makeover' },
+  { id: 3, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/3-800x1073.png.webp', alt: 'Before and after dental transformation — restorative dentistry', category: 'Restorative Dentistry' },
+  { id: 4, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/4-800x1073.png.webp', alt: 'Before and after dental transformation — dental crowns and veneers', category: 'Crowns & Veneers' },
+  { id: 5, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/5-800x1073.png.webp', alt: 'Before and after dental transformation — teeth restoration', category: 'Teeth Restoration' },
+  { id: 6, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/6-800x1073.png.webp', alt: 'Before and after dental transformation — complete smile transformation', category: 'Smile Transformation' },
+  { id: 7, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/7-800x1073.png.webp', alt: 'Before and after dental transformation — cosmetic dental work', category: 'Cosmetic Dentistry' },
+  { id: 8, src: 'https://premierdentalnc.com/wp-content/uploads/2024/08/8-800x1073.png.webp', alt: 'Before and after dental transformation — complete dental makeover', category: 'Full Makeover' },
 ];
 ---
 
 <section id="our-work" class="py-20 lg:py-28 bg-white" aria-labelledby="our-work-heading">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
+    <div class="text-center max-w-3xl mx-auto mb-14">
       <p class="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Our Work</p>
       <h2 id="our-work-heading" class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-text">
         Real Results. Real Smiles.
@@ -22,39 +22,63 @@ const cases = [
       <p class="mt-5 text-text-light leading-relaxed text-lg">
         See the transformations our patients have experienced through cosmetic, restorative, and advanced dental care at Premier Dental.
       </p>
+      <!-- Before / After Legend -->
+      <div class="mt-8 inline-flex items-center gap-6 bg-bg-alt rounded-full px-6 py-2.5 border border-border">
+        <span class="flex items-center gap-2 text-sm font-medium text-text-muted">
+          <span class="w-3 h-3 rounded-full bg-text-muted/40"></span>
+          Before
+        </span>
+        <span class="w-px h-5 bg-border"></span>
+        <span class="flex items-center gap-2 text-sm font-medium text-primary">
+          <span class="w-3 h-3 rounded-full bg-primary"></span>
+          After
+        </span>
+      </div>
     </div>
 
-    <!-- Before & After Gallery -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <!-- Before & After Gallery — 2-column grid matching original layout -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
       {cases.map((item) => (
         <button
-          class="our-work-card group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer bg-bg-alt border border-border hover:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
+          class="our-work-card group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer bg-bg-alt border border-border hover:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
           data-src={item.src}
           data-alt={item.alt}
           aria-label={`View ${item.alt}`}
         >
-          <div class="aspect-[3/4] overflow-hidden">
+          <!-- Image -->
+          <div class="aspect-[3/4] overflow-hidden relative">
             <img
               src={item.src}
               alt={item.alt}
               width="800"
               height="1073"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
               loading="lazy"
             />
+            <!-- Before / After Labels overlay -->
+            <div class="absolute bottom-0 inset-x-0 flex pointer-events-none">
+              <div class="flex-1 py-2 bg-black/50 backdrop-blur-sm text-center">
+                <span class="text-white/90 text-xs sm:text-sm font-semibold uppercase tracking-wider">Before</span>
+              </div>
+              <div class="flex-1 py-2 bg-primary/80 backdrop-blur-sm text-center">
+                <span class="text-white text-xs sm:text-sm font-semibold uppercase tracking-wider">After</span>
+              </div>
+            </div>
           </div>
-          <!-- Hover Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-            <span class="text-white text-sm font-semibold flex items-center gap-2">
+
+          <!-- Case Info Bar -->
+          <div class="px-4 py-3 flex items-center justify-between bg-white">
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center">
+                {item.id}
+              </span>
+              <span class="text-sm font-medium text-text">{item.category}</span>
+            </div>
+            <span class="text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
               </svg>
-              View Transformation
             </span>
-          </div>
-          <!-- Case Number Badge -->
-          <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-primary text-xs font-bold rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
-            {item.id}
           </div>
         </button>
       ))}
@@ -85,23 +109,36 @@ const cases = [
   </div>
 
   <!-- Lightbox Modal -->
-  <div id="our-work-lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/85 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div id="our-work-lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-label="Image viewer">
     <button id="lightbox-close" class="absolute top-4 right-4 z-10 text-white/80 hover:text-white transition-colors p-2" aria-label="Close image viewer">
       <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-    <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white/80 hover:text-white transition-colors p-2 bg-white/10 rounded-full hover:bg-white/20" aria-label="Previous image">
+    <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white/80 hover:text-white transition-colors p-3 bg-white/10 rounded-full hover:bg-white/20" aria-label="Previous image">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
     </button>
-    <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white/80 hover:text-white transition-colors p-2 bg-white/10 rounded-full hover:bg-white/20" aria-label="Next image">
+    <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white/80 hover:text-white transition-colors p-3 bg-white/10 rounded-full hover:bg-white/20" aria-label="Next image">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
       </svg>
     </button>
-    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain" />
+    <div class="relative max-w-4xl w-full">
+      <img id="lightbox-img" src="" alt="" class="w-full max-h-[85vh] rounded-xl shadow-2xl object-contain" />
+      <!-- Lightbox Before/After labels -->
+      <div class="absolute bottom-0 inset-x-0 flex rounded-b-xl overflow-hidden">
+        <div class="flex-1 py-3 bg-black/60 backdrop-blur-sm text-center">
+          <span class="text-white text-sm font-semibold uppercase tracking-wider">Before</span>
+        </div>
+        <div class="flex-1 py-3 bg-primary/80 backdrop-blur-sm text-center">
+          <span class="text-white text-sm font-semibold uppercase tracking-wider">After</span>
+        </div>
+      </div>
+    </div>
+    <!-- Case counter -->
+    <div id="lightbox-counter" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm font-medium"></div>
   </div>
 </section>
 
@@ -109,6 +146,7 @@ const cases = [
   const cards = document.querySelectorAll('.our-work-card');
   const lightbox = document.getElementById('our-work-lightbox');
   const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxCounter = document.getElementById('lightbox-counter');
   const closeBtn = document.getElementById('lightbox-close');
   const prevBtn = document.getElementById('lightbox-prev');
   const nextBtn = document.getElementById('lightbox-next');
@@ -120,10 +158,15 @@ const cases = [
 
   let currentIndex = 0;
 
-  function openLightbox(index: number) {
+  function updateLightbox(index: number) {
     currentIndex = index;
     lightboxImg.src = images[index].src;
     lightboxImg.alt = images[index].alt;
+    if (lightboxCounter) lightboxCounter.textContent = `${index + 1} / ${images.length}`;
+  }
+
+  function openLightbox(index: number) {
+    updateLightbox(index);
     lightbox?.classList.remove('hidden');
     lightbox?.classList.add('flex');
     document.body.style.overflow = 'hidden';
@@ -136,9 +179,7 @@ const cases = [
   }
 
   function navigate(direction: number) {
-    currentIndex = (currentIndex + direction + images.length) % images.length;
-    lightboxImg.src = images[currentIndex].src;
-    lightboxImg.alt = images[currentIndex].alt;
+    updateLightbox((currentIndex + direction + images.length) % images.length);
   }
 
   cards.forEach((card, i) => {
