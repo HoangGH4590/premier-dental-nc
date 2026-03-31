@@ -25,9 +25,37 @@ const relatedPosts = blogPosts
 
 const title = `${post.title} | Premier Dental Blog`;
 const description = post.excerpt;
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.title,
+  "description": post.excerpt,
+  "image": `https://premierdentalnc.com${post.image}`,
+  "datePublished": new Date(post.date).toISOString(),
+  "dateModified": new Date(post.date).toISOString(),
+  "author": {
+    "@type": "Organization",
+    "name": "Premier Dental",
+    "url": "https://premierdentalnc.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Premier Dental",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://premierdentalnc.com/wp-content/uploads/2024/08/logo-dental-premier-200x200.png.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://premierdentalnc.com/blog/${post.slug}`
+  },
+  "articleSection": post.category
+};
 ---
 
-<Layout title={title} description={description} keywords={`${post.category}, dental blog, Premier Dental, Charlotte NC`}>
+<Layout title={title} description={description} keywords={`${post.category}, dental blog, Premier Dental, Charlotte NC`} schema={blogSchema}>
   <Header />
   <main class="pt-16 lg:pt-20">
     <!-- Article Header -->
