@@ -2,35 +2,35 @@
 const faqs = [
   {
     question: 'Do you accept new patients?',
-    answer: 'Yes! Premier Dental is always accepting new patients at both our Albemarle and Charlotte locations. We welcome patients of all ages and offer same-week appointment availability for most procedures.',
+    answer: 'Yes! Premier Dental is always accepting new patients at both our Albemarle and Charlotte locations. We welcome patients of all ages and offer same-week appointment availability for most procedures. <a href="/#contact" class="text-primary hover:underline font-medium">Request your first appointment</a>.',
   },
   {
     question: 'What insurance plans do you accept?',
-    answer: "We accept most major insurance plans including Cigna, Aetna, MetLife, Delta Dental, Guardian, United Healthcare, and Blue Cross Blue Shield. Out-of-pocket costs vary by procedure. Contact us if you don't see your plan listed — we're happy to help you understand your coverage.",
+    answer: 'We accept most major insurance plans including Cigna, Aetna, MetLife, Delta Dental, Guardian, United Healthcare, and Blue Cross Blue Shield. Out-of-pocket costs vary by procedure. <a href="/#insurance" class="text-primary hover:underline font-medium">View our full insurance details</a> or contact us if you don\'t see your plan listed — we\'re happy to help you understand your coverage.',
   },
   {
     question: 'Do you offer same-day emergency dental care?',
-    answer: "Yes. We provide same-day emergency dental services at both our Albemarle and Charlotte offices. If you're experiencing a dental emergency — severe pain, a broken tooth, swelling, or trauma — call us immediately and we'll get you in as quickly as possible.",
+    answer: 'Yes. We provide <a href="/services/emergency-dentistry" class="text-primary hover:underline font-medium">same-day emergency dental services</a> at both our Albemarle and Charlotte offices. If you\'re experiencing a dental emergency — severe pain, a broken tooth, swelling, or trauma — call us immediately and we\'ll get you in as quickly as possible.',
   },
   {
     question: 'How often should I get a dental cleaning?',
-    answer: 'We recommend dental cleanings and checkups every 6 months for most patients. Regular preventive care helps catch problems early, keeps your teeth and gums healthy, and can save you from more costly procedures down the road.',
+    answer: 'We recommend dental cleanings and checkups every 6 months for most patients. Regular <a href="/services/preventive-dentistry" class="text-primary hover:underline font-medium">preventive care</a> helps catch problems early, keeps your teeth and gums healthy, and can save you from more costly procedures down the road.',
   },
   {
     question: 'What is EMFACE and do you offer it?',
-    answer: 'EMFACE is a non-invasive facial rejuvenation treatment that uses synchronized radiofrequency and HIFES muscle stimulation to lift, tone, and smooth the skin. It also helps relieve TMJ-related facial tension and jaw pain. Yes — we offer EMFACE at both our Albemarle and Charlotte locations, and all our staff are trained and certified.',
+    answer: '<a href="/#emface" class="text-primary hover:underline font-medium">EMFACE</a> is a non-invasive facial rejuvenation treatment that uses synchronized radiofrequency and HIFES muscle stimulation to lift, tone, and smooth the skin. It also helps relieve TMJ-related facial tension and jaw pain. Yes — we offer EMFACE at both our Albemarle and Charlotte locations, and all our staff are trained and certified.',
   },
   {
     question: 'How much do dental implants cost?',
-    answer: 'The cost of dental implants varies depending on the number of implants needed, whether bone grafting is required, and your insurance coverage. We provide personalized treatment plans with transparent pricing during your consultation. Contact us to schedule a free implant consultation.',
+    answer: 'The cost of <a href="/services/implant-dentistry" class="text-primary hover:underline font-medium">dental implants</a> varies depending on the number of implants needed, whether bone grafting is required, and your insurance coverage. We provide personalized treatment plans with transparent pricing during your consultation. <a href="/#contact" class="text-primary hover:underline font-medium">Schedule a free implant consultation</a>.',
   },
   {
     question: 'What are your office hours?',
-    answer: 'Both our Albemarle and Charlotte offices are open Monday through Thursday, 8:30 AM to 5:00 PM. We are closed Friday, Saturday, and Sunday. We offer flexible scheduling and same-week appointments for most procedures.',
+    answer: 'Both our <a href="/#locations" class="text-primary hover:underline font-medium">Albemarle and Charlotte offices</a> are open Monday through Thursday, 8:30 AM to 5:00 PM. We are closed Friday, Saturday, and Sunday. We offer flexible scheduling and same-week appointments for most procedures.',
   },
   {
     question: 'Do you offer Invisalign clear aligners?',
-    answer: "Yes! We offer Invisalign clear aligners as a discreet, comfortable alternative to traditional braces. Invisalign can correct a wide range of alignment issues including crowding, spacing, overbite, and underbite. Schedule a consultation to find out if Invisalign is right for you.",
+    answer: 'Yes! We offer <a href="/services/invisalign" class="text-primary hover:underline font-medium">Invisalign clear aligners</a> as a discreet, comfortable alternative to traditional braces. Invisalign can correct a wide range of alignment issues including crowding, spacing, overbite, and underbite. <a href="/#contact" class="text-primary hover:underline font-medium">Schedule a consultation</a> to find out if Invisalign is right for you.',
   },
 ];
 ---
@@ -56,8 +56,7 @@ const faqs = [
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </summary>
-          <div class="px-6 pb-5 text-text-light leading-relaxed">
-            {faq.answer}
+          <div class="px-6 pb-5 text-text-light leading-relaxed" set:html={faq.answer}>
           </div>
         </details>
       ))}

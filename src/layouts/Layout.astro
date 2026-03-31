@@ -8,6 +8,7 @@ interface Props {
   ogImage?: string;
   keywords?: string;
   schema?: object;
+  extraSchemas?: object[];
 }
 
 const {
@@ -16,7 +17,8 @@ const {
   canonical = Astro.url.href,
   ogImage = '/og-image.jpg',
   keywords = 'dentist Albemarle NC, dentist Charlotte NC, cosmetic dentistry, dental implants, Invisalign, emergency dentist, EMFACE treatment NC, Premier Dental',
-  schema
+  schema,
+  extraSchemas = []
 } = Astro.props;
 
 const siteUrl = 'https://premierdentalnc.com';
@@ -60,6 +62,9 @@ const siteUrl = 'https://premierdentalnc.com';
   {schema && (
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   )}
+  {extraSchemas.map(s => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))}
 </head>
 <body class="bg-bg text-text antialiased">
   <slot />

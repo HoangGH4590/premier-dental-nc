@@ -12,6 +12,77 @@ import Locations from '../components/Locations.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you accept new patients?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Premier Dental is always accepting new patients at both our Albemarle and Charlotte locations. We welcome patients of all ages and offer same-week appointment availability for most procedures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What insurance plans do you accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We accept most major insurance plans including Cigna, Aetna, MetLife, Delta Dental, Guardian, United Healthcare, and Blue Cross Blue Shield. Out-of-pocket costs vary by procedure. Contact us if you don't see your plan listed — we're happy to help you understand your coverage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer same-day emergency dental care?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We provide same-day emergency dental services at both our Albemarle and Charlotte offices. If you're experiencing a dental emergency — severe pain, a broken tooth, swelling, or trauma — call us immediately and we'll get you in as quickly as possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I get a dental cleaning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We recommend dental cleanings and checkups every 6 months for most patients. Regular preventive care helps catch problems early, keeps your teeth and gums healthy, and can save you from more costly procedures down the road."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is EMFACE and do you offer it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EMFACE is a non-invasive facial rejuvenation treatment that uses synchronized radiofrequency and HIFES muscle stimulation to lift, tone, and smooth the skin. It also helps relieve TMJ-related facial tension and jaw pain. Yes — we offer EMFACE at both our Albemarle and Charlotte locations, and all our staff are trained and certified."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do dental implants cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The cost of dental implants varies depending on the number of implants needed, whether bone grafting is required, and your insurance coverage. We provide personalized treatment plans with transparent pricing during your consultation. Contact us to schedule a free implant consultation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are your office hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both our Albemarle and Charlotte offices are open Monday through Thursday, 8:30 AM to 5:00 PM. We are closed Friday, Saturday, and Sunday. We offer flexible scheduling and same-week appointments for most procedures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer Invisalign clear aligners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We offer Invisalign clear aligners as a discreet, comfortable alternative to traditional braces. Invisalign can correct a wide range of alignment issues including crowding, spacing, overbite, and underbite. Schedule a consultation to find out if Invisalign is right for you."
+      }
+    }
+  ]
+};
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "Dentist",
@@ -72,6 +143,7 @@ const schema = {
   title="Premier Dental | Dentist in Albemarle & Charlotte, NC | Comprehensive Dental Care"
   description="Premier Dental provides gentle, honest dental care in Albemarle and Charlotte, NC. Services include preventive cleanings, cosmetic dentistry, dental implants, Invisalign, emergency dentistry, and EMFACE treatments."
   schema={schema}
+  extraSchemas={[faqSchema]}
 >
   <Header />
   <main>
