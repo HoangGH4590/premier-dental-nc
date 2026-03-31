@@ -28,6 +28,53 @@ const schema = {
     "procedureType": "http://schema.org/NoninvasiveProcedure"
   }
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does Invisalign treatment take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Treatment duration varies depending on the complexity of your case. Mild crowding or spacing issues may be resolved in as few as 6 months, while more complex alignment or bite corrections can take 12 to 18 months. During your initial consultation at our Albemarle or Charlotte office, we will provide an estimated timeline based on your specific treatment plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Invisalign as effective as traditional braces?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For many cases, Invisalign is just as effective as traditional braces. It can treat crowding, spacing, overbite, underbite, crossbite, and open bite. However, some very complex orthodontic cases may still require traditional braces. During your consultation, our team will assess your specific needs and honestly recommend the best option for your situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can teenagers use Invisalign?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Invisalign Teen is specifically designed for teenage patients. It includes features like compliance indicators (blue dots that fade with wear to help parents and dentists verify the aligners are being worn enough) and extra replacement aligners in case any are lost. Most teens appreciate that Invisalign is nearly invisible and does not affect their ability to play sports or musical instruments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Invisalign cost in the Charlotte and Albemarle, NC area?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Invisalign costs in the Charlotte and Albemarle area typically range from $3,000 to $7,000, depending on the complexity and length of treatment. This is often comparable to the cost of traditional braces. Many dental insurance plans now include orthodontic benefits that can be applied to Invisalign, and we offer flexible payment plans to make treatment affordable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I care for my Invisalign aligners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Caring for your aligners is straightforward. Rinse them every time you remove them, clean them daily with a soft toothbrush and clear liquid soap (not toothpaste, which can scratch them), and store them in their case when not in use. Avoid eating or drinking anything other than water while wearing them, and always brush your teeth before putting aligners back in to prevent bacteria buildup."
+      }
+    }
+  ]
+};
 ---
 
 <ServiceLayout
@@ -35,6 +82,7 @@ const schema = {
   description="Invisalign clear aligners at Premier Dental. Straighten your teeth discreetly and comfortably without metal brackets. Available in Albemarle and Charlotte, NC."
   keywords="Invisalign Albemarle NC, Invisalign Charlotte NC, clear aligners, teeth straightening, orthodontics, invisible braces"
   schema={schema}
+  extraSchemas={[faqSchema]}
 >
   <!-- Hero -->
   <section class="relative bg-bg-alt py-20 lg:py-28">

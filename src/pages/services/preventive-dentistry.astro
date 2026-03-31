@@ -31,6 +31,53 @@ const schema = {
     "procedureType": "http://schema.org/NoninvasiveProcedure"
   }
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How often should I visit the dentist for a checkup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most patients, we recommend a dental checkup and professional cleaning every 6 months. However, patients with a history of gum disease, high cavity risk, diabetes, or other health conditions may benefit from more frequent visits -- every 3 to 4 months. During your visit at our Albemarle or Charlotte office, your dentist will recommend a schedule tailored to your specific oral health needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are dental X-rays safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Digital X-rays, which we use at Premier Dental, emit up to 90% less radiation than traditional film X-rays. The amount of radiation from a dental X-ray is extremely small -- comparable to the background radiation you receive from a short airplane flight. We follow the ALARA principle (As Low As Reasonably Achievable) and only take X-rays when clinically necessary to diagnose or monitor dental conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are dental sealants and who should get them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dental sealants are thin, protective coatings painted onto the chewing surfaces of back teeth (molars and premolars). They fill in the deep grooves and pits where bacteria and food particles tend to accumulate, reducing the risk of cavities by up to 80%. Sealants are most commonly applied to children and teenagers as soon as their permanent molars come in, but adults with deep grooves or a high risk of decay can also benefit. The application is quick, painless, and does not require drilling or anesthesia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can preventive dentistry help with gum disease?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Regular professional cleanings remove tartar buildup that contributes to gum disease, and routine examinations allow us to detect the earliest signs of gingivitis before it progresses to more serious periodontitis. If early gum disease is found, we can implement targeted treatments such as deep cleanings (scaling and root planing) to reverse the condition. Consistent preventive care is the single most effective way to prevent gum disease and the tooth loss it can cause."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is fluoride treatment necessary for adults?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While fluoride treatments are especially beneficial for children, many adults can benefit from them as well. Adults with dry mouth (often caused by medications), a history of frequent cavities, gum recession exposing tooth roots, or existing crowns and bridges may be excellent candidates for professional fluoride application. Your dentist at Premier Dental will assess your individual risk factors and recommend fluoride treatment if it would provide meaningful protection for your teeth."
+      }
+    }
+  ]
+};
 ---
 
 <ServiceLayout
@@ -38,6 +85,7 @@ const schema = {
   description="Preventive dental care at Premier Dental including cleanings, exams, screenings, fluoride treatments, and sealants. Keep your smile healthy in Albemarle and Charlotte, NC."
   keywords="preventive dentistry Albemarle NC, dental cleaning Charlotte NC, dental exam, fluoride treatment, dental sealants, oral cancer screening"
   schema={schema}
+  extraSchemas={[faqSchema]}
 >
   <!-- Hero -->
   <section class="relative bg-bg-alt py-20 lg:py-28">

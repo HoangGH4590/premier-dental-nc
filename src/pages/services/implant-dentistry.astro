@@ -27,6 +27,53 @@ const schema = {
     "procedureType": "http://schema.org/NoninvasiveProcedure"
   }
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Am I a good candidate for dental implants?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most adults with good general health are candidates for dental implants. The primary requirements are adequate jawbone density to support the implant and healthy gums free from periodontal disease. Conditions such as uncontrolled diabetes, heavy smoking, or certain medications may affect healing and need to be discussed during your consultation. Even patients with bone loss may qualify with the help of bone grafting or zygomatic implants."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do dental implants last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The titanium implant post itself can last a lifetime with proper care. The crown or prosthetic attached to the implant typically lasts 10 to 15 years before it may need replacement due to normal wear. Regular dental checkups, good oral hygiene, and avoiding habits like teeth grinding significantly extend the lifespan of both the implant and the restoration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the All-on-4 dental implant procedure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All-on-4 is a full-arch restoration technique that replaces an entire row of teeth using just four strategically placed implants. The rear implants are angled to maximize contact with available bone, often eliminating the need for bone grafting. Many patients can receive a temporary set of teeth on the same day as implant placement. All-on-4 is an excellent solution for patients who are currently wearing dentures or who have multiple failing teeth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do dental implants cost in the Charlotte, NC area?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The cost of dental implants varies based on several factors, including the number of implants needed, whether bone grafting is required, the type of restoration (single crown, bridge, or full arch), and the materials used. A single dental implant with a crown typically ranges from $3,000 to $5,000 in the Charlotte and Albemarle, NC area. Full arch solutions like All-on-4 have a higher upfront cost but can be more economical long-term compared to ongoing denture maintenance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the alternatives to dental implants?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The main alternatives to dental implants include dental bridges, partial dentures, and full dentures. Bridges are a good option for replacing one or a few missing teeth but require modifying adjacent healthy teeth. Dentures are removable and do not require surgery but can be less stable and comfortable than implants. Each option has its own advantages and limitations, and the best choice depends on your specific situation, budget, and long-term goals."
+      }
+    }
+  ]
+};
 ---
 
 <ServiceLayout
@@ -34,6 +81,7 @@ const schema = {
   description="Dental implant services at Premier Dental. Endosteal, subperiosteal, and zygomatic implants available in Albemarle and Charlotte, NC. Permanent tooth replacement solutions."
   keywords="dental implants Albemarle NC, dental implants Charlotte NC, tooth replacement, endosteal implants, All-on-4, implant dentistry"
   schema={schema}
+  extraSchemas={[faqSchema]}
 >
   <!-- Hero -->
   <section class="relative bg-bg-alt py-20 lg:py-28">

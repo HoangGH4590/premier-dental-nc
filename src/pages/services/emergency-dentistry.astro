@@ -30,6 +30,53 @@ const schema = {
     "procedureType": "http://schema.org/NoninvasiveProcedure"
   }
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What counts as a dental emergency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A dental emergency is any situation involving severe tooth pain, bleeding that will not stop, swelling in the face or gums, a knocked-out or broken tooth, a lost filling or crown, or signs of infection such as pus or fever. If you are unsure whether your situation qualifies as an emergency, call our Albemarle office at (704) 982-5516 or Charlotte office at (704) 688-7120 -- we will help you determine the best course of action."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do if my tooth gets knocked out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Time is critical when a tooth is knocked out. Pick up the tooth by the crown (the visible part), not the root. If possible, gently rinse it with water (do not scrub or remove tissue fragments) and try to place it back in the socket. If you cannot reinsert it, keep it moist by placing it in a glass of milk, saline solution, or between your cheek and gum. Call us immediately and get to our office within 30 to 60 minutes for the best chance of saving the tooth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I go to the emergency room for a dental emergency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While a hospital emergency room can provide pain relief and antibiotics for dental infections, most ERs are not equipped to perform definitive dental treatments like root canals, extractions, or crown repairs. In most cases, visiting an emergency dentist like Premier Dental is faster, more cost-effective, and provides the actual treatment you need rather than just temporary relief. However, if you experience facial swelling that affects your breathing or swallowing, uncontrolled bleeding, or trauma to the jaw, go to the ER immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I manage dental pain before getting to the office?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Over-the-counter pain medications such as ibuprofen (Advil, Motrin) or acetaminophen (Tylenol) can help manage pain temporarily. Apply a cold compress to the outside of your cheek for 15 to 20 minutes to reduce swelling. Rinsing with warm salt water can help clean the area and reduce bacteria. Avoid placing aspirin directly on the gum tissue, as this can cause a chemical burn. These measures provide temporary relief until you can be seen at our office."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I prevent dental emergencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While not all emergencies can be prevented, you can significantly reduce your risk by maintaining regular preventive dental visits every 6 months, wearing a custom mouthguard during sports, avoiding chewing on hard objects like ice or popcorn kernels, and addressing dental problems early before they become emergencies. If you have weakened teeth from previous decay or large fillings, ask your dentist about protective restorations like crowns to reduce the risk of fractures."
+      }
+    }
+  ]
+};
 ---
 
 <ServiceLayout
@@ -37,6 +84,7 @@ const schema = {
   description="Same-day emergency dental care at Premier Dental. Severe pain, broken teeth, swelling, or trauma -- call us immediately. Albemarle and Charlotte, NC locations."
   keywords="emergency dentist Albemarle NC, emergency dentist Charlotte NC, same-day dental care, toothache, broken tooth, dental emergency"
   schema={schema}
+  extraSchemas={[faqSchema]}
 >
   <!-- Hero -->
   <section class="relative py-20 lg:py-28 text-white bg-gradient-to-br from-[#6b1c1c] to-[#8b3a3a]">

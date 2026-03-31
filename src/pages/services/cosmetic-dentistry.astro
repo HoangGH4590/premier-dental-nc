@@ -25,6 +25,53 @@ const schema = {
     "procedureType": "http://schema.org/NoninvasiveProcedure"
   }
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does professional teeth whitening last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Professional teeth whitening results typically last between 6 months and 2 years, depending on your dietary habits and oral hygiene routine. Coffee, tea, red wine, and tobacco can accelerate staining. We recommend periodic touch-up treatments and using a whitening toothpaste to maintain your bright smile. At Premier Dental in Charlotte and Albemarle, NC, we offer both in-office and take-home whitening options."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are dental veneers permanent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porcelain veneers are considered a permanent cosmetic treatment because a thin layer of enamel is removed to accommodate the veneer. Once placed, they cannot be reversed. However, veneers are not indestructible -- they typically last 10 to 20 years before needing replacement. With proper care, including avoiding biting hard objects and maintaining good oral hygiene, your veneers can remain beautiful for well over a decade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is dental bonding and how long does it last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dental bonding uses tooth-colored composite resin to repair chips, cracks, gaps, and discoloration. It is one of the most affordable and quickest cosmetic procedures -- often completed in a single visit of 30 to 60 minutes per tooth. Bonding typically lasts 5 to 10 years, depending on where the bonding is placed and your oral habits. It is an excellent option for minor cosmetic improvements without the commitment of veneers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can cosmetic dentistry fix crooked teeth without braces?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In some cases, yes. Porcelain veneers can create the appearance of straighter teeth by covering misalignment, and dental bonding can improve the look of mildly uneven teeth. However, for significant alignment issues, orthodontic treatment such as Invisalign clear aligners is generally the best approach for both aesthetics and long-term oral health. During your consultation at our Albemarle or Charlotte office, we will recommend the most effective approach for your specific situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a smile makeover and who is it for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A smile makeover is a comprehensive, customized treatment plan that combines multiple cosmetic procedures to address various concerns at once -- such as discoloration, chips, gaps, uneven gums, and misalignment. It is ideal for patients who have several aesthetic issues they want to correct simultaneously. At Premier Dental, our smile makeover process begins with a detailed assessment and digital preview so you can see the potential results before committing to treatment."
+      }
+    }
+  ]
+};
 ---
 
 <ServiceLayout
@@ -32,6 +79,7 @@ const schema = {
   description="Cosmetic dentistry procedures at Premier Dental including teeth whitening, veneers, dental crowns, bonding, Invisalign, smile makeovers, and more in Charlotte and Albemarle, NC."
   keywords="cosmetic dentistry Albemarle NC, teeth whitening Charlotte NC, dental veneers, smile makeover, dental bonding, gum contouring"
   schema={schema}
+  extraSchemas={[faqSchema]}
 >
   <!-- Hero -->
   <section class="relative bg-bg-alt py-20 lg:py-28">

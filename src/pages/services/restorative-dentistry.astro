@@ -23,6 +23,53 @@ const schema = {
     "procedureType": "http://schema.org/NoninvasiveProcedure"
   }
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long do dental crowns last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With proper care, dental crowns typically last 10 to 15 years, and many patients enjoy their crowns for 20 years or more. The longevity depends on the material used (porcelain, zirconia, or porcelain-fused-to-metal), your oral hygiene habits, and whether you grind your teeth. At Premier Dental in Albemarle and Charlotte, NC, we use high-quality crown materials and precise fitting techniques to maximize the lifespan of every restoration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a root canal painful?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Modern root canal therapy is far less uncomfortable than most people expect. With today's anesthesia and advanced techniques, the procedure feels similar to getting a standard filling. Most patients report that the toothache or infection that brought them in was far more painful than the root canal itself. After the procedure, mild soreness is normal for a few days but can be managed with over-the-counter pain medication."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a dental bridge and a dental implant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A dental bridge replaces missing teeth by anchoring artificial teeth to the natural teeth on either side of the gap. It does not require surgery but does require modifying the adjacent teeth. A dental implant, on the other hand, is a titanium post surgically placed in the jawbone that acts as an artificial root, supporting a crown independently without affecting neighboring teeth. Implants also help preserve jawbone density."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if I need a filling or a crown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The choice between a filling and a crown depends on the extent of damage to the tooth. Fillings are ideal for small to moderate cavities where plenty of healthy tooth structure remains. When decay or damage is more extensive -- affecting a large portion of the tooth or compromising its structural integrity -- a crown provides the full coverage and strength needed to protect the tooth long-term. In some cases, an inlay or onlay may be the perfect middle ground."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can old metal fillings be replaced with tooth-colored ones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, old amalgam (metal) fillings can be safely removed and replaced with modern composite resin fillings that match the natural color of your teeth. Many patients choose to replace metal fillings for aesthetic reasons, and it can also be beneficial if the old filling is cracked, worn, or leaking. At Premier Dental, we use BPA-free composite materials for a durable, natural-looking result."
+      }
+    }
+  ]
+};
 ---
 
 <ServiceLayout
@@ -30,6 +77,7 @@ const schema = {
   description="Restorative dentistry services at Premier Dental including fillings, crowns, bridges, implants, dentures, root canal therapy, and full mouth reconstruction in Albemarle and Charlotte, NC."
   keywords="restorative dentistry Albemarle NC, dental crowns Charlotte NC, dental fillings, dental bridges, root canal therapy, full mouth reconstruction"
   schema={schema}
+  extraSchemas={[faqSchema]}
 >
   <!-- Hero -->
   <section class="relative bg-bg-alt py-20 lg:py-28">

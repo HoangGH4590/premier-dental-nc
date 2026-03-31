@@ -84,6 +84,121 @@ const faqSchema = {
   ]
 };
 
+const teamSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Dr. Herbert Vu",
+    "jobTitle": "Lead Dentist",
+    "medicalSpecialty": "Restorative and Cosmetic Dentistry",
+    "worksFor": {
+      "@type": "Dentist",
+      "name": "Premier Dental",
+      "url": "https://premierdentalnc.com"
+    },
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "1122 North 6th St",
+        "addressLocality": "Albemarle",
+        "addressRegion": "NC",
+        "postalCode": "28001"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "2100 N Davidson Street",
+        "addressLocality": "Charlotte",
+        "addressRegion": "NC",
+        "postalCode": "28205"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Dr. Justine Nguyen",
+    "jobTitle": "Dentist",
+    "medicalSpecialty": "Preventive and Family Dentistry",
+    "worksFor": {
+      "@type": "Dentist",
+      "name": "Premier Dental",
+      "url": "https://premierdentalnc.com"
+    },
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "1122 North 6th St",
+        "addressLocality": "Albemarle",
+        "addressRegion": "NC",
+        "postalCode": "28001"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "2100 N Davidson Street",
+        "addressLocality": "Charlotte",
+        "addressRegion": "NC",
+        "postalCode": "28205"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Dr. Tyler Davis",
+    "jobTitle": "Dentist",
+    "medicalSpecialty": "Implant Dentistry",
+    "worksFor": {
+      "@type": "Dentist",
+      "name": "Premier Dental",
+      "url": "https://premierdentalnc.com"
+    },
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "1122 North 6th St",
+        "addressLocality": "Albemarle",
+        "addressRegion": "NC",
+        "postalCode": "28001"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "2100 N Davidson Street",
+        "addressLocality": "Charlotte",
+        "addressRegion": "NC",
+        "postalCode": "28205"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Dr. VeRa",
+    "jobTitle": "Dentist",
+    "medicalSpecialty": "Cosmetic Dentistry and EMFACE",
+    "worksFor": {
+      "@type": "Dentist",
+      "name": "Premier Dental",
+      "url": "https://premierdentalnc.com"
+    },
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "1122 North 6th St",
+        "addressLocality": "Albemarle",
+        "addressRegion": "NC",
+        "postalCode": "28001"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "2100 N Davidson Street",
+        "addressLocality": "Charlotte",
+        "addressRegion": "NC",
+        "postalCode": "28205"
+      }
+    ]
+  }
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "Dentist",
@@ -150,7 +265,7 @@ const schema = {
   title="Premier Dental | Dentist in Albemarle & Charlotte, NC | Comprehensive Dental Care"
   description="Premier Dental provides gentle, honest dental care in Albemarle and Charlotte, NC. Services include preventive cleanings, cosmetic dentistry, dental implants, Invisalign, emergency dentistry, and EMFACE treatments."
   schema={schema}
-  extraSchemas={[faqSchema]}
+  extraSchemas={[faqSchema, ...teamSchema]}
 >
   <Header />
   <main>
