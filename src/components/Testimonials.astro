@@ -1,0 +1,82 @@
+---
+const testimonials = [
+  {
+    name: 'Sarah M.',
+    location: 'Albemarle, NC',
+    service: 'Dental Implants',
+    text: 'I was terrified of getting implants, but the team at Premier Dental made the entire process so comfortable. From the consultation to the final placement, they explained every step clearly. My new teeth look and feel completely natural — I wish I had done this years ago.',
+  },
+  {
+    name: 'James T.',
+    location: 'Charlotte, NC',
+    service: 'Invisalign',
+    text: 'As an adult, I never thought I could straighten my teeth without metal braces. Premier Dental set me up with Invisalign and the results have been incredible. The staff checks in regularly and the whole process has been seamless.',
+  },
+  {
+    name: 'Linda R.',
+    location: 'Albemarle, NC',
+    service: 'Emergency Care',
+    text: 'I cracked a tooth on a Saturday morning and panicked. I called Premier Dental first thing Monday and they got me in right away. The pain relief was immediate, and they saved the tooth with a crown. I cannot say enough good things about their emergency care.',
+  },
+  {
+    name: 'Marcus D.',
+    location: 'Charlotte, NC',
+    service: 'Cleanings & Preventive',
+    text: 'I have been coming to Premier Dental for my cleanings for over three years now. The hygienists are thorough but gentle, and the dentist always takes time to answer my questions. It is the first dental office where I actually look forward to my appointments.',
+  },
+  {
+    name: 'Angela W.',
+    location: 'Albemarle, NC',
+    service: 'Cosmetic Dentistry',
+    text: 'I wanted to improve my smile before my daughter\'s wedding. Premier Dental recommended veneers for my front teeth and the transformation was beyond what I imagined. The color matching is perfect and they look completely natural. I smiled confidently all day.',
+  },
+  {
+    name: 'David K.',
+    location: 'Charlotte, NC',
+    service: 'EMFACE Treatment',
+    text: 'I came in for a cleaning and learned about EMFACE for my TMJ discomfort. After a few sessions, the tension in my jaw has decreased significantly and my face feels more lifted. It is a treatment I never expected to find at a dental office, and I am glad I did.',
+  },
+];
+
+const stars = 5;
+---
+
+<section id="testimonials" class="py-20 lg:py-28 bg-bg-alt" aria-labelledby="testimonials-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <p class="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Patient Testimonials</p>
+      <h2 id="testimonials-heading" class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-text">
+        What Our Patients Say
+      </h2>
+      <p class="mt-4 text-lg text-text-light">
+        Real experiences from patients at our Albemarle and Charlotte locations.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {testimonials.map((testimonial) => (
+        <div class="bg-white rounded-2xl border border-border p-8 flex flex-col hover:shadow-lg transition-shadow">
+          <!-- Stars -->
+          <div class="flex gap-1 mb-4" aria-label={`${stars} out of 5 stars`}>
+            {Array.from({ length: stars }).map(() => (
+              <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+
+          <!-- Quote -->
+          <blockquote class="text-text-light leading-relaxed flex-1">
+            "{testimonial.text}"
+          </blockquote>
+
+          <!-- Patient Info -->
+          <div class="mt-6 pt-6 border-t border-border">
+            <p class="font-heading font-semibold text-text">{testimonial.name} <span class="font-body font-normal text-text-muted">&mdash; {testimonial.location}</span></p>
+            <p class="text-sm text-primary font-medium mt-1">{testimonial.service}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

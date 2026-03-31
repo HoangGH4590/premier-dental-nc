@@ -6,6 +6,7 @@ import Services from '../components/Services.astro';
 import Emface from '../components/Emface.astro';
 import WhyChooseUs from '../components/WhyChooseUs.astro';
 import About from '../components/About.astro';
+import Testimonials from '../components/Testimonials.astro';
 import Insurance from '../components/Insurance.astro';
 import FAQ from '../components/FAQ.astro';
 import Locations from '../components/Locations.astro';
@@ -119,6 +120,12 @@ const schema = {
       "addressCountry": "US"
     }
   ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "127",
+    "bestRating": "5"
+  },
   "areaServed": [
     { "@type": "City", "name": "Albemarle" },
     { "@type": "City", "name": "Charlotte" }
@@ -152,6 +159,7 @@ const schema = {
     <Emface />
     <WhyChooseUs />
     <About />
+    <Testimonials />
     <Insurance />
     <FAQ />
     <Locations />
