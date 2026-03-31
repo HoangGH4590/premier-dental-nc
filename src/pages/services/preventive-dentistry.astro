@@ -19,12 +19,25 @@ const tips = [
   'Wear a mouthguard during sports',
   'Replace your toothbrush every 3-4 months',
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Preventive Dentistry | Premier Dental | Albemarle & Charlotte, NC",
+  "description": "Preventive dental care at Premier Dental including cleanings, exams, screenings, fluoride treatments, and sealants. Keep your smile healthy in Albemarle and Charlotte, NC.",
+  "mainEntity": {
+    "@type": "MedicalProcedure",
+    "name": "Preventive Dentistry",
+    "procedureType": "http://schema.org/NoninvasiveProcedure"
+  }
+};
 ---
 
 <ServiceLayout
   title="Preventive Dentistry | Premier Dental | Albemarle & Charlotte, NC"
   description="Preventive dental care at Premier Dental including cleanings, exams, screenings, fluoride treatments, and sealants. Keep your smile healthy in Albemarle and Charlotte, NC."
   keywords="preventive dentistry Albemarle NC, dental cleaning Charlotte NC, dental exam, fluoride treatment, dental sealants, oral cancer screening"
+  schema={schema}
 >
   <!-- Hero -->
   <section class="relative bg-bg-alt py-20 lg:py-28">

@@ -18,12 +18,25 @@ const steps = [
   'Avoid aspirin near the affected area (it can increase bleeding)',
   "Don't try to fix broken dental work yourself",
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Emergency Dentistry | Premier Dental | Same-Day Care in Albemarle & Charlotte, NC",
+  "description": "Same-day emergency dental care at Premier Dental. Severe pain, broken teeth, swelling, or trauma -- call us immediately. Albemarle and Charlotte, NC locations.",
+  "mainEntity": {
+    "@type": "MedicalProcedure",
+    "name": "Emergency Dentistry",
+    "procedureType": "http://schema.org/NoninvasiveProcedure"
+  }
+};
 ---
 
 <ServiceLayout
   title="Emergency Dentistry | Premier Dental | Same-Day Care in Albemarle & Charlotte, NC"
   description="Same-day emergency dental care at Premier Dental. Severe pain, broken teeth, swelling, or trauma -- call us immediately. Albemarle and Charlotte, NC locations."
   keywords="emergency dentist Albemarle NC, emergency dentist Charlotte NC, same-day dental care, toothache, broken tooth, dental emergency"
+  schema={schema}
 >
   <!-- Hero -->
   <section class="relative py-20 lg:py-28 text-white bg-gradient-to-br from-[#6b1c1c] to-[#8b3a3a]">

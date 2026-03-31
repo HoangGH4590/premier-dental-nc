@@ -15,12 +15,25 @@ const benefits = [
   'Highly durable -- can last a lifetime with proper care',
   'Support full-arch restoration with All-on-4 or All-on-6',
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Dental Implants | Premier Dental | Albemarle & Charlotte, NC",
+  "description": "Dental implant services at Premier Dental. Endosteal, subperiosteal, and zygomatic implants available in Albemarle and Charlotte, NC. Permanent tooth replacement solutions.",
+  "mainEntity": {
+    "@type": "MedicalProcedure",
+    "name": "Dental Implants",
+    "procedureType": "http://schema.org/NoninvasiveProcedure"
+  }
+};
 ---
 
 <ServiceLayout
   title="Dental Implants | Premier Dental | Albemarle & Charlotte, NC"
   description="Dental implant services at Premier Dental. Endosteal, subperiosteal, and zygomatic implants available in Albemarle and Charlotte, NC. Permanent tooth replacement solutions."
   keywords="dental implants Albemarle NC, dental implants Charlotte NC, tooth replacement, endosteal implants, All-on-4, implant dentistry"
+  schema={schema}
 >
   <!-- Hero -->
   <section class="relative bg-bg-alt py-20 lg:py-28">

@@ -16,12 +16,25 @@ const steps = [
   { num: '3', title: 'Receive Your Aligners', desc: 'Your custom aligners are manufactured and delivered. Wear each set for about 2 weeks, 20-22 hours per day.' },
   { num: '4', title: 'Enjoy Your New Smile', desc: "After completing your aligner series, you'll have the straight, beautiful smile you've always wanted. A retainer keeps results lasting." },
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Invisalign | Premier Dental | Clear Aligners in Albemarle & Charlotte, NC",
+  "description": "Invisalign clear aligners at Premier Dental. Straighten your teeth discreetly and comfortably without metal brackets. Available in Albemarle and Charlotte, NC.",
+  "mainEntity": {
+    "@type": "MedicalProcedure",
+    "name": "Invisalign Clear Aligners",
+    "procedureType": "http://schema.org/NoninvasiveProcedure"
+  }
+};
 ---
 
 <ServiceLayout
   title="Invisalign | Premier Dental | Clear Aligners in Albemarle & Charlotte, NC"
   description="Invisalign clear aligners at Premier Dental. Straighten your teeth discreetly and comfortably without metal brackets. Available in Albemarle and Charlotte, NC."
   keywords="Invisalign Albemarle NC, Invisalign Charlotte NC, clear aligners, teeth straightening, orthodontics, invisible braces"
+  schema={schema}
 >
   <!-- Hero -->
   <section class="relative bg-bg-alt py-20 lg:py-28">

@@ -13,12 +13,25 @@ const procedures = [
   { num: '9', title: 'Full Mouth Reconstruction', desc: 'For patients with extensive dental issues -- combining crowns, bridges, veneers, implants, and gum treatments to restore functionality and aesthetics.' },
   { num: '10', title: 'Cosmetic Dental Implants', desc: 'The gold standard for replacing missing teeth. Titanium posts provide a sturdy foundation for natural-looking crowns that last a lifetime.' },
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Cosmetic Dentistry | Premier Dental | Albemarle & Charlotte, NC",
+  "description": "Cosmetic dentistry procedures at Premier Dental including teeth whitening, veneers, dental crowns, bonding, Invisalign, smile makeovers, and more in Charlotte and Albemarle, NC.",
+  "mainEntity": {
+    "@type": "MedicalProcedure",
+    "name": "Cosmetic Dentistry",
+    "procedureType": "http://schema.org/NoninvasiveProcedure"
+  }
+};
 ---
 
 <ServiceLayout
   title="Cosmetic Dentistry | Premier Dental | Albemarle & Charlotte, NC"
   description="Cosmetic dentistry procedures at Premier Dental including teeth whitening, veneers, dental crowns, bonding, Invisalign, smile makeovers, and more in Charlotte and Albemarle, NC."
   keywords="cosmetic dentistry Albemarle NC, teeth whitening Charlotte NC, dental veneers, smile makeover, dental bonding, gum contouring"
+  schema={schema}
 >
   <!-- Hero -->
   <section class="relative bg-bg-alt py-20 lg:py-28">
